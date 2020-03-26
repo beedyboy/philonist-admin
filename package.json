@@ -1,0 +1,31 @@
+{
+  "name": "philonist-admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "isomorphic-unfetch": "^3.0.0",
+    "mobx": "^5.15.4",
+    "mobx-logger": "^0.7.1",
+    "mobx-react": "^6.1.8",
+    "moment": "^2.24.0",
+    "next": "^9.3.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-markdown": "^4.3.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2",
+    "shortid": "^2.2.15",
+    "swr": "^0.1.18"
+  }
+}
