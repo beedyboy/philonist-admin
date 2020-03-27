@@ -3,7 +3,8 @@ import { inject, observer } from 'mobx-react';
 import { useMobxStores } from '../store/store'; 
 import { Button } from 'semantic-ui-react';
 
-const DisplayHome = () => {
+const DisplayHome = 
+observer(props => {
       const { courseStore } = useMobxStores();
      return (
        <div>
@@ -14,8 +15,8 @@ const DisplayHome = () => {
             } }>Add Count</Button>
        </div>
      )
-}
- 
+})
+
   class Index extends React.PureComponent {
 //     static async getInitialProps({ mobxStore, query }) {
 //         await mobxStore;

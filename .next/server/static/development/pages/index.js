@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -115,8 +115,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
-const DisplayHome = () => {
+const DisplayHome = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(props => {
   const {
     courseStore
   } = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["useMobxStores"])();
@@ -124,30 +123,29 @@ const DisplayHome = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 10,
       columnNumber: 8
     }
   }, "home page ", courseStore.likesCount, __jsx("br", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 12,
       columnNumber: 1
     }
   }), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_3__["Button"], {
     primary: true,
     onClick: () => {
-      console.log('clicked');
       courseStore.setCount();
     },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 13,
       columnNumber: 13
     }
   }, "Add Count"));
-};
+});
 
 class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent {
   //     static async getInitialProps({ mobxStore, query }) {
@@ -302,44 +300,26 @@ function getStores(initialData = {
   }
 
   return store;
-} // const StoreContext = React.createContext();
-// export function StoreProvider(props) {
-//     return <StoreContext.Provider value={props.value}>
-//         {props.children}
-//     </StoreContext.Provider>
-// }
-
+}
 const StoreContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext();
 function StoreProvider(props) {
-  const store = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["useLocalStore"])(() => ({
-    bugs: ['centipede'],
-    addBug: bug => {
-      store.bugs.push(bug);
-    },
-
-    get bugsCount() {
-      return store.bugs.length;
-    }
-
-  }));
   return __jsx(StoreContext.Provider, {
-    value: store,
+    value: props.value,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
-      columnNumber: 5
+      lineNumber: 28,
+      columnNumber: 12
     }
   }, props.children);
 }
-;
 function useMobxStores() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(StoreContext);
 }
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

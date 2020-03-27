@@ -616,37 +616,19 @@ function getStores(initialData = {
   }
 
   return store;
-} // const StoreContext = React.createContext();
-// export function StoreProvider(props) {
-//     return <StoreContext.Provider value={props.value}>
-//         {props.children}
-//     </StoreContext.Provider>
-// }
-
+}
 const StoreContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext();
 function StoreProvider(props) {
-  const store = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["useLocalStore"])(() => ({
-    bugs: ['centipede'],
-    addBug: bug => {
-      store.bugs.push(bug);
-    },
-
-    get bugsCount() {
-      return store.bugs.length;
-    }
-
-  }));
   return __jsx(StoreContext.Provider, {
-    value: store,
+    value: props.value,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
-      columnNumber: 5
+      lineNumber: 28,
+      columnNumber: 12
     }
   }, props.children);
 }
-;
 function useMobxStores() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(StoreContext);
 }

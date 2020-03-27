@@ -22,34 +22,16 @@ export  function getStores(initialData = { courseStore: {} }) {
     return store;
 }
 
-// const StoreContext = React.createContext();
-
-// export function StoreProvider(props) {
-//     return <StoreContext.Provider value={props.value}>
-//         {props.children}
-//     </StoreContext.Provider>
-// }
-
-
-
 const StoreContext = React.createContext();
 
-export function StoreProvider(props)  {
-    
-const store = useLocalStore(() => ({
-    bugs: ['centipede'],
-    addBug: (bug) => {
-        store.bugs.push(bug);
-    },
-    get bugsCount() {
-        return store.bugs.length
-    }
-}));
+export function StoreProvider(props) {
+    return <StoreContext.Provider value={props.value}>
+        {props.children}
+    </StoreContext.Provider>
+}
 
-return (
-    <StoreContext.Provider value={store}>{props.children}</StoreContext.Provider>
-)
-};
+
+ 
 
 export function useMobxStores() {
     return React.useContext(StoreContext);

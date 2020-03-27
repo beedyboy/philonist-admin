@@ -56374,8 +56374,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
-
-var DisplayHome = function DisplayHome() {
+var DisplayHome = Object(mobx_react__WEBPACK_IMPORTED_MODULE_6__["observer"])(function (props) {
   var _useMobxStores = Object(_store_store__WEBPACK_IMPORTED_MODULE_7__["useMobxStores"])(),
       courseStore = _useMobxStores.courseStore;
 
@@ -56383,30 +56382,29 @@ var DisplayHome = function DisplayHome() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 10,
       columnNumber: 8
     }
   }, "home page ", courseStore.likesCount, __jsx("br", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 12,
       columnNumber: 1
     }
   }), __jsx(semantic_ui_react__WEBPACK_IMPORTED_MODULE_8__["Button"], {
     primary: true,
     onClick: function onClick() {
-      console.log('clicked');
       courseStore.setCount();
     },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 13,
       columnNumber: 13
     }
   }, "Add Count"));
-};
+});
 
 var Index = /*#__PURE__*/function (_React$PureComponent) {
   Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Index, _React$PureComponent);
@@ -56589,39 +56587,19 @@ function getStores() {
   }
 
   return store;
-} // const StoreContext = React.createContext();
-// export function StoreProvider(props) {
-//     return <StoreContext.Provider value={props.value}>
-//         {props.children}
-//     </StoreContext.Provider>
-// }
-
+}
 var StoreContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext();
 function StoreProvider(props) {
-  var store = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["useLocalStore"])(function () {
-    return {
-      bugs: ['centipede'],
-      addBug: function addBug(bug) {
-        store.bugs.push(bug);
-      },
-
-      get bugsCount() {
-        return store.bugs.length;
-      }
-
-    };
-  });
   return __jsx(StoreContext.Provider, {
-    value: store,
+    value: props.value,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
-      columnNumber: 5
+      lineNumber: 28,
+      columnNumber: 12
     }
   }, props.children);
 }
-;
 function useMobxStores() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(StoreContext);
 }
